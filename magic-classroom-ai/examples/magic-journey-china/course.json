@@ -1,0 +1,136 @@
+{
+  "schemaVersion": "1.0.0",
+  "course": {
+    "id": "magic-journey-china",
+    "slug": "magic-journey-china",
+    "title": "Magic Journey",
+    "subtitle": "Explore China",
+    "locale": "zh-CN",
+    "status": "draft",
+    "theme": "fantasy-academy",
+    "audience": "school-demo",
+    "estimatedMinutes": 20
+  },
+  "theme": {
+    "background": "night-academy-china",
+    "accent": "gold",
+    "surface": "glass-dark",
+    "motionLevel": "medium"
+  },
+  "audio": {
+    "bgm": "/assets/courses/magic-journey-china/audio/intro.mp3",
+    "autoplay": false,
+    "defaultMuted": true
+  },
+  "teacher": {
+    "id": "guide-01",
+    "name": "Avery",
+    "role": "Magic Guide",
+    "asset": "/assets/courses/magic-journey-china/characters/guide.webp",
+    "greeting": "欢迎来到中国探索之旅。我们将通过地图、历史与文化任务完成今天的学习。"
+  },
+  "scenes": [
+    {
+      "id": "scene-01",
+      "order": 1,
+      "type": "intro",
+      "title": "Magic Journey",
+      "subtitle": "Explore China",
+      "description": "探索中国地理、历史与文化，完成互动任务并收集学习奖励。",
+      "background": "/assets/courses/magic-journey-china/backgrounds/intro.webp",
+      "map": {
+        "asset": "/assets/courses/magic-journey-china/maps/china.svg",
+        "regions": [
+          {"id": "north", "label": "North China"},
+          {"id": "east", "label": "East China"},
+          {"id": "south", "label": "South China"},
+          {"id": "west", "label": "West China"}
+        ]
+      },
+      "effects": {
+        "particles": true,
+        "titleGlow": true,
+        "mapPulse": true,
+        "characterFloat": true
+      },
+      "primaryAction": {
+        "label": "Start Journey",
+        "action": "next-scene"
+      }
+    },
+    {
+      "id": "scene-02",
+      "order": 2,
+      "type": "map-explore",
+      "title": "Explore China",
+      "hotspots": [
+        {"id": "beijing", "label": "Beijing", "x": 66, "y": 35},
+        {"id": "shanghai", "label": "Shanghai", "x": 79, "y": 56},
+        {"id": "xian", "label": "Xi'an", "x": 53, "y": 51}
+      ]
+    },
+    {
+      "id": "scene-03",
+      "order": 3,
+      "type": "timeline",
+      "title": "A Short Journey Through Chinese History",
+      "items": [
+        {"id": "c1", "label": "Ancient China", "summary": "了解古代文明与重要发明。"},
+        {"id": "c2", "label": "Imperial China", "summary": "探索主要朝代与文化发展。"},
+        {"id": "c3", "label": "Modern China", "summary": "认识现代中国的发展。"}
+      ]
+    },
+    {
+      "id": "scene-04",
+      "order": 4,
+      "type": "reading",
+      "title": "Reading Challenge",
+      "content": "China has a long history and a diverse geography, with many important cities and cultural landmarks.",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single-choice",
+          "prompt": "Which city is the capital of China?",
+          "options": ["Shanghai", "Beijing", "Xi'an", "Guangzhou"],
+          "answer": 1,
+          "reward": 10
+        }
+      ]
+    },
+    {
+      "id": "scene-05",
+      "order": 5,
+      "type": "matching",
+      "title": "City Match",
+      "pairs": [
+        {"left": "Beijing", "right": "Capital"},
+        {"left": "Shanghai", "right": "Major coastal city"},
+        {"left": "Xi'an", "right": "Historic city"}
+      ]
+    },
+    {
+      "id": "scene-06",
+      "order": 6,
+      "type": "ai-guide",
+      "title": "Ask the Guide",
+      "mode": "demo-scripted",
+      "suggestions": ["中国首都在哪里？", "中国有哪些著名城市？", "中国历史有什么特点？"]
+    },
+    {
+      "id": "scene-07",
+      "order": 7,
+      "type": "summary",
+      "title": "Journey Summary",
+      "points": ["中国地图", "历史与文化", "重点城市", "课程关键词"]
+    },
+    {
+      "id": "scene-08",
+      "order": 8,
+      "type": "result",
+      "title": "Journey Complete",
+      "showScore": true,
+      "showRewards": true,
+      "allowRestart": true
+    }
+  ]
+}
