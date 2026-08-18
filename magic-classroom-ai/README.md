@@ -42,6 +42,10 @@ Magic Classroom AI（魔法课堂）是一套基于 AI 的沉浸式互动数字�
 
 `codex/tasks/scene-01-intro.md`
 
+后续场景统一任务书：
+
+`codex/tasks/scene-02-to-08.md`
+
 ## 文档导航
 
 ### 产品与规划
@@ -64,6 +68,8 @@ Magic Classroom AI（魔法课堂）是一套基于 AI 的沉浸式互动数字�
 - `docs/19-FastAPI后端架构.md`
 - `docs/20-Docker与部署设计.md`
 - `docs/21-CI-CD自动部署方案.md`
+- `docs/23-数据库迁移与初始化规范.md`
+- `docs/24-测试用例清单.md`
 
 ### AI / Codex
 - `docs/08-Codex开发任务清单.md`
@@ -72,6 +78,7 @@ Magic Classroom AI（魔法课堂）是一套基于 AI 的沉浸式互动数字�
 - `codex/phase-01-demo.md`
 - `codex/phase-02-product.md`
 - `codex/tasks/scene-01-intro.md`
+- `codex/tasks/scene-02-to-08.md`
 
 ### 运营、上线与合规
 - `docs/10-服务器部署方案.md`
@@ -79,6 +86,16 @@ Magic Classroom AI（魔法课堂）是一套基于 AI 的沉浸式互动数字�
 - `docs/13-Git工作流与提交规范.md`
 - `docs/14-正式上线Checklist.md`
 - `docs/22-素材版权与合规规范.md`
+
+## 机器可执行规范
+
+- OpenAPI：`openapi/openapi.yaml`
+- 课程 JSON Schema：`schemas/course.schema.json`
+- 本地容器编排：`docker-compose.yml`
+- CI：`.github/workflows/ci.yml`
+- 环境变量模板：`.env.example`
+
+注意：当前 `docker-compose.yml` 和 CI workflow 属于工程骨架，在 `apps/web` 与 `apps/api` 实际初始化后由 Codex 对齐真实命令和依赖。
 
 ## 示例课程
 
@@ -124,6 +141,8 @@ cp .env.example .env
 6. 不把密钥写入代码。
 7. 不使用未经授权的影视角色、官方美术或来源不明素材。
 8. 每个 Codex 任务结束后执行 lint/typecheck/test/build，并汇报改动文件和未完成项。
+9. 数据库变更必须通过 migration。
+10. API 契约优先以 OpenAPI 对齐前后端。
 
 ## 当前最优先开发顺序
 
@@ -151,3 +170,12 @@ P2
 16. 多学校/租户
 17. 完整分析与运维
 ```
+
+## 开发前检查
+
+在真正开始生成代码前，请先确认：
+- `apps/web` 是否已经初始化。
+- `apps/api` 是否已经初始化。
+- CI 中的脚本名称与 package.json/requirements 实际一致。
+- `.env` 只存在本地或部署 Secret 中。
+- Demo 使用的素材均为原创、授权或可合法使用素材。
