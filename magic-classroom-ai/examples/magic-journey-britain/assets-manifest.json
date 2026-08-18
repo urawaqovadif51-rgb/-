@@ -1,0 +1,16 @@
+{
+  "courseId": "magic-journey-britain",
+  "assets": [
+    {"id":"intro-bg","type":"image","path":"/assets/courses/magic-journey-britain/backgrounds/intro.webp","required":true,"notes":"原创奇幻学院夜景，不直接复制具体影视作品视觉"},
+    {"id":"guide","type":"image","path":"/assets/courses/magic-journey-britain/characters/guide.webp","required":true,"notes":"原创 AI 导师角色透明背景"},
+    {"id":"britain-map","type":"svg","path":"/assets/courses/magic-journey-britain/maps/britain.svg","required":true},
+    {"id":"intro-bgm","type":"audio","path":"/assets/courses/magic-journey-britain/audio/intro.mp3","required":false},
+    {"id":"button-click","type":"audio","path":"/assets/courses/magic-journey-britain/audio/click.mp3","required":false},
+    {"id":"sparkle","type":"image","path":"/assets/courses/magic-journey-britain/effects/sparkle.webp","required":false}
+  ],
+  "fallbacks": {
+    "image": "/assets/placeholders/image.svg",
+    "audio": null,
+    "map": "/assets/placeholders/map.svg"
+  }
+}
