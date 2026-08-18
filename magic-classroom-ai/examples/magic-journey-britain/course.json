@@ -1,0 +1,136 @@
+{
+  "schemaVersion": "1.0.0",
+  "course": {
+    "id": "magic-journey-britain",
+    "slug": "magic-journey-britain",
+    "title": "Magic Journey",
+    "subtitle": "Explore Britain",
+    "locale": "zh-CN",
+    "status": "draft",
+    "theme": "fantasy-academy",
+    "audience": "school-demo",
+    "estimatedMinutes": 20
+  },
+  "theme": {
+    "background": "night-academy",
+    "accent": "gold",
+    "surface": "glass-dark",
+    "motionLevel": "medium"
+  },
+  "audio": {
+    "bgm": "/assets/courses/magic-journey-britain/audio/intro.mp3",
+    "autoplay": false,
+    "defaultMuted": true
+  },
+  "teacher": {
+    "id": "guide-01",
+    "name": "Avery",
+    "role": "Magic Guide",
+    "asset": "/assets/courses/magic-journey-britain/characters/guide.webp",
+    "greeting": "欢迎来到英国探索之旅。准备好开始今天的学习任务了吗？"
+  },
+  "scenes": [
+    {
+      "id": "scene-01",
+      "order": 1,
+      "type": "intro",
+      "title": "Magic Journey",
+      "subtitle": "Explore Britain",
+      "description": "探索英国历史、文化与地标，完成互动任务并收集奖励。",
+      "background": "/assets/courses/magic-journey-britain/backgrounds/intro.webp",
+      "map": {
+        "asset": "/assets/courses/magic-journey-britain/maps/britain.svg",
+        "regions": [
+          {"id": "england", "label": "England"},
+          {"id": "scotland", "label": "Scotland"},
+          {"id": "wales", "label": "Wales"},
+          {"id": "northern-ireland", "label": "Northern Ireland"}
+        ]
+      },
+      "effects": {
+        "particles": true,
+        "titleGlow": true,
+        "mapPulse": true,
+        "characterFloat": true
+      },
+      "primaryAction": {
+        "label": "Start Journey",
+        "action": "next-scene"
+      }
+    },
+    {
+      "id": "scene-02",
+      "order": 2,
+      "type": "map-explore",
+      "title": "Explore the United Kingdom",
+      "hotspots": [
+        {"id": "london", "label": "London", "x": 62, "y": 72},
+        {"id": "edinburgh", "label": "Edinburgh", "x": 48, "y": 28},
+        {"id": "cardiff", "label": "Cardiff", "x": 42, "y": 72}
+      ]
+    },
+    {
+      "id": "scene-03",
+      "order": 3,
+      "type": "timeline",
+      "title": "A Short Journey Through History",
+      "items": [
+        {"id": "t1", "label": "Early Britain", "summary": "了解英国早期历史背景。"},
+        {"id": "t2", "label": "Industrial Change", "summary": "探索工业发展带来的社会变化。"},
+        {"id": "t3", "label": "Modern Britain", "summary": "认识现代英国社会与文化。"}
+      ]
+    },
+    {
+      "id": "scene-04",
+      "order": 4,
+      "type": "reading",
+      "title": "Reading Challenge",
+      "content": "Britain is made up of four constituent countries and has a long, diverse history.",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single-choice",
+          "prompt": "How many constituent countries are included?",
+          "options": ["2", "3", "4", "5"],
+          "answer": 2,
+          "reward": 10
+        }
+      ]
+    },
+    {
+      "id": "scene-05",
+      "order": 5,
+      "type": "matching",
+      "title": "Landmark Match",
+      "pairs": [
+        {"left": "London", "right": "England"},
+        {"left": "Edinburgh", "right": "Scotland"},
+        {"left": "Cardiff", "right": "Wales"}
+      ]
+    },
+    {
+      "id": "scene-06",
+      "order": 6,
+      "type": "ai-guide",
+      "title": "Ask the Guide",
+      "mode": "demo-scripted",
+      "suggestions": ["英国由哪些地区组成？", "伦敦有哪些著名地标？", "苏格兰首府在哪里？"]
+    },
+    {
+      "id": "scene-07",
+      "order": 7,
+      "type": "summary",
+      "title": "Journey Summary",
+      "points": ["英国地图", "历史与文化", "重点城市", "课程关键词"]
+    },
+    {
+      "id": "scene-08",
+      "order": 8,
+      "type": "result",
+      "title": "Journey Complete",
+      "showScore": true,
+      "showRewards": true,
+      "allowRestart": true
+    }
+  ]
+}
